@@ -1,0 +1,9 @@
+<a routerLinkActive="active" class="list-group-item clearfix" [routerLink]="['/todos', todo.id]">
+  <div class="pull-left">
+    <h4 class="list-group-item-heading">{{todo.title}}</h4>
+  </div>
+  <div class="pull-right">
+    <span [ngStyle]="{'background-color': todo.status === 'completed'? 'green': 'red'}"
+      class="badge">{{todo.status}}</span>
+  </div>
+</a>

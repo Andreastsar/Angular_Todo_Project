@@ -1,0 +1,28 @@
+.navbar-default {
+  background-color: rgb(62, 59, 255);
+  border-color: rgb(62, 59, 255);
+  border-radius: 0;
+}
+
+.navbar-brand {
+  color: #fff;
+}
+
+.navbar-nav > li > a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.navbar-nav > li > a:hover {
+  color: rgb(255, 0, 0);
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navbar-default .navbar-nav > .active > a {
+  background-color: #4970ff;
+}

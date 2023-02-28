@@ -1,0 +1,12 @@
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Title: {{currentTodo.title}}</mat-card-title>
+    <mat-card-subtitle>Description: {{currentTodo.description}}</mat-card-subtitle>
+    <mat-card-subtitle>Status: {{currentTodo.status}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-actions align="end">
+    <a mat-stroked-button color="primary" type="button" [routerLink]="['edit']">Edit</a>
+    <button mat-stroked-button color="warn" type="button" (click)="onDeleteTodo(+currentTodo.id)"
+      routerLink="/todos">Delete</button>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,15 @@
+<div class="row">
+  <div class="col-md-5">
+    <div class="createTodo">
+      <h4>Create a new ToDo</h4>
+      <br>
+      <button type="button" class="btn btn-primary" (click)="onNewToDo()">New ToDo</button>
+    </div>
+    <hr>
+    <h4>My list of ToDos</h4>
+    <app-todos-list></app-todos-list>
+  </div>
+  <div class="col-md-7">
+    <router-outlet></router-outlet>
+  </div>
+</div>

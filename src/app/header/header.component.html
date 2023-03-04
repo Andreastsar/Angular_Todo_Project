@@ -10,11 +10,13 @@
     <div class="navbar-default">
       <ul class="nav navbar-nav">
         <li routerLinkActive="active"><a routerLink="/home">Home</a></li>
-        <li routerLinkActive="active"><a routerLink="/todos">ToDos</a></li>
+        <li routerLinkActive="active" *ngIf="isUserAuthenticated"><a routerLink="/todos">ToDos</a></li>
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <li><a href="#">Login</a></li>
+        <li routerLinkActive="active" *ngIf="!isUserAuthenticated"><a routerLink="/login">Login</a></li>
+        <li *ngIf="currentUserEmail"><a class="user-info">Logged in as: {{currentUserEmail}}</a></li>
+        <li *ngIf="isUserAuthenticated"><a style="cursor: pointer" (click)="onLogout()">Logout</a></li>
       </ul>
     </div>
 

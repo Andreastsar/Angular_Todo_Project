@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
-import { Todo } from '../todo.model';
 import { TodosService } from '../todos.service';
 
 @Component({
@@ -13,6 +12,7 @@ export class TodoEditComponent implements OnInit {
   todoForm: FormGroup;
   isEditing: boolean = false;
   todoId: number;
+  isFormInvalid: boolean;
 
   constructor(
     private route: ActivatedRoute,
@@ -52,7 +52,10 @@ export class TodoEditComponent implements OnInit {
   }
 
   onSubmitForm(): void {
-    if (!this.todoForm.valid) return;
+    if (!this.todoForm.valid) {
+      this.isFormInvalid = true;
+      return;
+    }
 
     // If not editing, add a new todo
     if (!this.isEditing) {
@@ -78,5 +81,9 @@ export class TodoEditComponent implements OnInit {
 
     // Reset form fields
     this.todoForm.reset();
+  }
+
+  hideError() {
+    this.isFormInvalid = false;
   }
 }

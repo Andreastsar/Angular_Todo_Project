@@ -1,0 +1,14 @@
+.navbar-inverse > div > p {
+  color: #fff;
+  text-align: center;
+}
+
+.container-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container-info > p {
+  padding-top: 10px;
+}

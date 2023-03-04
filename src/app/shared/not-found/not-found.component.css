@@ -1,0 +1,13 @@
+* {
+  text-align: center;
+}
+
+p {
+  display: inline-block;
+}
+
+a {
+  background-color: #fce2ae;
+  padding: 10px;
+  border-radius: 5px;
+}

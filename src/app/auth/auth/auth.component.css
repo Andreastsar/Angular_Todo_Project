@@ -1,0 +1,19 @@
+h3 {
+  text-align: center;
+  font-weight: bold;
+  padding-bottom: 10px;
+}
+
+.sign-in-helper {
+  text-align: center;
+}
+
+.sign-in-helper > p {
+  display: inline-block;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.alert-danger {
+  margin-top: 5px;
+}

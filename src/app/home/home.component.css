@@ -39,6 +39,9 @@ li:nth-child(3) {
 li:nth-child(4) {
   animation-delay: 4s;
 }
+li:nth-child(5) {
+  animation-delay: 5s;
+}
 
 @keyframes h3-slide-in {
   100% {

@@ -1,0 +1,70 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <h3>{{!isLoginMode? 'Create New Account': 'Please Sign In'}}</h3>
+
+      <div *ngIf="!isLoginMode" class="sign-in-helper">
+        <p class="bg bg-success">You already own an account? <a style="cursor: pointer" type="button"
+            (click)="switchMode()">Sign
+            in</a></p>
+      </div>
+
+      <form class="form-horizontal" [formGroup]="loginForm" (ngSubmit)="onSubmitForm()">
+
+        <!-- Email -->
+        <div class="form-group">
+          <label for="email" class="col-sm-2 control-label">Email</label>
+          <div class="col-sm-10">
+            <input type="email" class="form-control" id="email" placeholder="Email" formControlName="email">
+            <p class="alert alert-danger" *ngIf="!loginForm.get('email').valid && loginForm.get('email').touched">
+              Invalid email, please enter a valid email!</p>
+
+          </div>
+        </div>
+
+        <!-- Password -->
+        <div class="form-group">
+          <label for="password" class="col-sm-2 control-label">Password</label>
+          <div class="col-sm-10">
+            <input type="password" class="form-control" id="password" placeholder="Password" formControlName="password">
+            <p class="alert alert-danger" *ngIf="!loginForm.get('password').valid && loginForm.get('password').touched">
+              Invalid input, please enter a correct value!
+            </p>
+          </div>
+        </div>
+
+        <!-- Button SignIn -->
+        <div class="form-group">
+          <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">Sign {{!isLoginMode? 'up':
+              'in'}}</button>
+          </div>
+        </div>
+
+        <hr>
+
+        <app-loading-spinner *ngIf="isLoading"></app-loading-spinner>
+
+
+        <!-- Error Message -->
+        <div class="alert alert-danger" *ngIf="error">
+          <p>{{error}}</p>
+        </div>
+
+        <!-- Succesfully Registered -->
+        <div class="alert alert-info" *ngIf="userRegistered">
+          <p>You have succesfully registered! Please Login!</p>
+        </div>
+
+        <!-- Info -->
+        <div class="alert alert-warning" style="text-align: center;">
+          <h4>The default username and password to login is :</h4>
+          <p>Username: <strong>test@test.com</strong></p>
+          <p>Password: <strong>123123</strong></p>
+          <hr>
+          <p>You can login with default account or create a new one!</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

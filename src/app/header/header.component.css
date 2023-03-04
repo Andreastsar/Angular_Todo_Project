@@ -26,3 +26,9 @@
 .navbar-default .navbar-nav > .active > a {
   background-color: #4970ff;
 }
+
+.navbar-nav > li > a.user-info {
+  background-color: #fff;
+  color: #ff3131;
+  border-radius: 10px;
+}
